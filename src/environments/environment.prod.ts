@@ -1,3 +1,6 @@
+import {endpoins} from "./endpoints";
+
 export const environment = {
-  production: true
+  production: true,
+  endpoint: endpoins("prod")
 };
