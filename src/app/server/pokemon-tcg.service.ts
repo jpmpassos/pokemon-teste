@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CardModel } from '../model/card.model';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,8 @@ import { environment } from 'src/environments/environment';
 export class PokemonTcgService {
   constructor(private httpClient: HttpClient) { }
 
-  listarTodos() {
-    return this.httpClient.get<CardModel[]>(environment.endpoint.CARD);
+  listarTodos(): Observable<any> {
+    return this.httpClient.get<any>(environment.endpoint.CARD);
   }
 
 }
