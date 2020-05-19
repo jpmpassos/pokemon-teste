@@ -10,6 +10,8 @@ const env = {
 export const endpoins = (ambiente: string) => {
     const URL_BASE = env[ambiente].BACK_HOST;
     return {
-        CARD: `${URL_BASE}/cards?types=fire,metal`,
+        card: (param) => `${URL_BASE}/cards${param ? "?" + param : ""}`,
     }
 }
+
+//page=1&pageSize=12

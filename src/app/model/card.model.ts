@@ -21,4 +21,5 @@ export interface CardModel {
     setCode: string;
     attacks: AttackModel[];
     weaknesses: WeaknessModel[];
+    text: string[];
 }
