@@ -1,0 +1,26 @@
+<mat-card>
+    <div gdAreas="contentCard sideCard" gdGap="4px" gdRows="auto">
+        <div gdarea="contentCard">
+            <mat-form-field class="full-width">
+                <mat-label>Pesquisa Baralho</mat-label>
+                <input type="text" [(ngModel)]="search" (keypress)="processarSearch()" placeholder="Pesquisa Nome"
+                    matInput>
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </div>
+        <div gdarea="sideCard">
+            <button mat-raised-button aria-label="Alterar nome do Baralho" (click)="openNovoBaralho()">
+                Novo Baralho
+            </button>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="container-card">
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="flex-start">
+        <ng-container>
+            <app-card-baralho *ngFor="let baralho of listaBaralhos" [baralhoComunicacao]="baralhoComunicacao"
+                [baralho]="baralho" fxFlex="0 1 calc(33.3% - 3px)" fxFlex.lt-md="0 1 calc(50% - 10px)"
+                fxFlex.lt-sm="100%" class="panel-card"></app-card-baralho>
+        </ng-container>
+    </div>
+</mat-card>

@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Salvar Baralho</h1>
+<div mat-dialog-content >
+    <mat-form-field>
+        <mat-label>Descrição do Baralho</mat-label>
+        <input *ngIf="baralho" matInput cdkFocusInitial [(ngModel)]="baralho.descricao" placeholder="Descrição">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="fechar()">Cancelar</button>
+    <button mat-button (click)="salvar()">Salvar</button>
+</div>

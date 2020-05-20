@@ -1,30 +1,21 @@
-<div gdAreas="header header | content side | footer footer" gdGap="16px" gdRows="auto auto auto">
+<div gdAreas="header | content | footer " gdGap="16px" gdRows="auto auto auto">
   <div gdArea="header">
     <div style="text-align: center">
       <h1>
         Teste <span style="color: green;">Localiza</span>
       </h1>
     </div>
+    <a mat-list-item routerLink="/baralho">Novo Baralho</a>
+    <a mat-list-item routerLink="/lista-baralhos">Lista Baralho</a>
+  </div>
+
+  <div gdArea="content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div gdArea="footer">
     <div style="text-align: left !important">
       Autor: João Paulo Medina Passos
     </div>
   </div>
-
-  <div gdArea="content">
-    <app-lista-cards></app-lista-cards>
-  </div>
-
-  <div gdarea="sidebar">
-    <button (click)="inseririBaralho()">Inserir</button> <br />
-    <button (click)="atualizarBaralho()">atualizar</button> <br />
-    <button (click)="deletarBaralho()">deletar</button><br />
-    <button (click)="obter()">obter</button><br />
-  </div>
-  <div gdArea="footer">
-    Footer
-  </div>
 </div>
-
-
-
-<router-outlet></router-outlet>

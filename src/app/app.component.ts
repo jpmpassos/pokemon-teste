@@ -12,17 +12,17 @@ import { BaralhoDal } from './core/dal/baralho.dal';
 export class AppComponent {
   title = 'pokemon-teste';
 
-  baralhoDal: BaralhoDal
+  baralhoDal: BaralhoDal;
 
   constructor(private _pokemonTcgService: PokemonTcgService) {
-
+/*
     this.baralhoDal = new BaralhoDal();
 
     this._pokemonTcgService.paginado(1, 20, "").subscribe((l) => {
       console.log(l);
     }, (error) => {
       console.log(error);
-    });
+    });*/
   }
 
   inseririBaralho() {

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PokemonTcgService } from 'src/app/server/pokemon-tcg.service';
 import { CardModel } from 'src/app/model/card.model';
 import { PageEvent } from '@angular/material/paginator';
 import { isNullOrUndefined } from 'util';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-lista-cards',
@@ -20,6 +21,8 @@ export class ListaCardsComponent implements OnInit {
   listaCads: CardModel[];
 
   pageEvent: PageEvent;
+
+  @Input() baralhoComunicacao: BehaviorSubject<CardModel>;
 
   constructor(
     private _pokemonTcgService: PokemonTcgService

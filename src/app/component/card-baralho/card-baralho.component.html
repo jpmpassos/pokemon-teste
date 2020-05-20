@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+        <div gdAreas="contentCard sideCard" gdGap="16px" gdAlignColumns="center" gdAlignRows="center" gdRows="auto">
+            <div *ngIf="baralho" gdarea="contentCard" gdAlignColumns="center" gdAlignRows="center">
+                <h3>{{baralho.descricao}}</h3>
+            </div>
+            <div gdarea="sideCard" gdAlignColumns="center" gdAlignRows="end">
+                <button mat-icon-button 
+                    aria-label="Alterar nome do Baralho" (click)="openEditarBaralho()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+        </div>
+       
+    </mat-card-header>
+    <mat-card-actions>
+        <button mat-raised-button (click)="selecionarCard()">Selecionar</button>
+        <button mat-raised-button (click)="selecionarCard()">Detalhes</button>
+        <button mat-raised-button (click)="deletarBaralho()">Deletar</button>
+    </mat-card-actions>
+    <!--mat-card-footer>
+        <mat-card-subtitle>Número Cartas: {{baralho.cards.length}}</mat-card-subtitle>
+    </mat-card-footer-->
+</mat-card>

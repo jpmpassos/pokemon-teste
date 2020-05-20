@@ -15,12 +15,26 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
+import { BaralhoPageComponent } from './page/baralho-page/baralho-page.component';
+import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SalvarBaralhoDialog } from './page/dialog/salvar-baralho.dialog';
+import { ListaBaralhosComponent } from './page/lista-baralhos/lista-baralhos.component';
+import { CardBaralhoComponent } from './component/card-baralho/card-baralho.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MensagensSnackComponent } from './page/snack/mensagens.snack';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaCardsComponent,
-    CardPokemonComponent
+    CardPokemonComponent,
+    BaralhoPageComponent,
+    SalvarBaralhoDialog,
+    ListaBaralhosComponent,
+    CardBaralhoComponent,
+    MensagensSnackComponent
   ],
   imports: [
     FormsModule,
@@ -34,9 +48,16 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatListModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatSnackBarModule
   ],
-
+  entryComponents: [
+    SalvarBaralhoDialog,
+    MensagensSnackComponent
+  ],
   providers: [
     PokemonTcgService
   ],

@@ -1,0 +1,35 @@
+<div gdAreas="content side" gdGap="16px" gdRows="auto">
+    <div gdArea="content">
+        <app-lista-cards [baralhoComunicacao]="baralhoComunicacao"></app-lista-cards>
+    </div>
+
+    <div gdarea="sidebar" style="width: 300px;">
+        <mat-card>
+            <mat-card-header class="baralho-header-card">
+                <div gdAreas="contentCard sideCard" gdGap="4px" gdRows="auto">
+                    <div *ngIf="baralho" gdarea="contentCard" style="width: 150px;"> {{baralho.descricao}}
+                    </div>
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-card class="container-card" *ngFor="let card of listaCards">
+                    <div gdAreas="contentCard sideCard" gdGap="4px" gdRows="auto">
+                        <div gdarea="contentCard" style="width: 150px"> {{card.name}}
+                            <br /><sub>hp</sub>{{card.hp && card.hp != 'None'?card.hp:''}}
+                        </div>
+                        <div gdarea="sideCard">
+                            <button mat-icon-button style="justify-content: left;"
+                                aria-label="Example icon button with a menu icon" (click)="removerCard(card)">
+                                <mat-icon>restore_from_trash</mat-icon>
+                            </button>
+                            <button mat-icon-button style="justify-content: left;"
+                                aria-label="Example icon button with a menu icon">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </mat-card>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
