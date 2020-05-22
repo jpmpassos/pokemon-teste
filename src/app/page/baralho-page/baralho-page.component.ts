@@ -11,6 +11,7 @@ import { ValdacaoBaralhoUtil } from 'src/app/util/validacao-baralho.util';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {ConfirmacaoDialogComponent } from '../dialog/confirmacao-dialog/confirmacao-dialog.component';
 import { ConfirmacaoDialogModel } from 'src/app/model/confirmacao-dialogo.model';
+import { StatusBaralhoEnum } from 'src/app/model/status-baralho.enum';
 
 @Component({
   selector: 'app-baralho-page',
@@ -100,5 +101,9 @@ export class BaralhoPageComponent implements OnInit {
       horizontalPosition: 'center',
       verticalPosition: 'top',
     });
+  }
+
+  isBaralhoIncompleto(){
+    return this.baralho.status == StatusBaralhoEnum.INCOMPLETO;
   }
 }

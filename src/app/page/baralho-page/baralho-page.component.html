@@ -7,7 +7,18 @@
         <mat-card>
             <mat-card-header class="baralho-header-card">
                 <div gdAreas="contentCard sideCard" gdGap="4px" gdRows="auto">
-                    <div *ngIf="baralho" gdarea="contentCard" style="width: 150px;"> {{baralho.descricao}}
+                    <div *ngIf="baralho" gdarea="contentCard" style="width: 150px;">
+                        <h3>
+                            {{baralho.descricao}}
+                        </h3>
+                        <p>
+                            Total de Cartas: {{listaCards.length}}
+                        </p>
+                        <div>
+                            Status: <span
+                                [ngStyle]="isBaralhoIncompleto()?{'color': 'red'} : {'color': 'green'}">Localiza
+                                {{isBaralhoIncompleto()? 'Incompleto': 'Completo'}}</span>
+                        </div>
                     </div>
                 </div>
             </mat-card-header>
@@ -23,7 +34,7 @@
                                 <mat-icon>restore_from_trash</mat-icon>
                             </button>
                             <button mat-icon-button style="justify-content: left;"
-                                aria-label="Example icon button with a menu icon">
+                                aria-label="Example icon button with a menu icon" (click)="processarInserirCard(card)">
                                 <mat-icon>add</mat-icon>
                             </button>
                         </div>
