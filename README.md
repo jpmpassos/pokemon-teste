@@ -1,6 +1,13 @@
 # PokemonTeste
+Este é um projeto desenvolvido afim de demonstrar habilidades no desenvolvimento.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
+## IDE
+Foi utilizado a IDE Visual Code para codificação.
+
+## Tecnologia utilizada
+O Sistema foi construido na linguagem TypeScript usando Angular 8. Também foi utilizado os componentes visuais do Angular Material para desenhar a tela, e o FlexLayout para desenrar o layout da aplicação.
+
+
 
 ## Development server
 
