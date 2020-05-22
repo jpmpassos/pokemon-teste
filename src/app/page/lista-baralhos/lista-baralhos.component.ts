@@ -6,7 +6,7 @@ import { ParamUtil } from 'src/app/util/param.util';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { SalvarBaralhoDialog } from '../dialog/salvar-baralho.dialog';
+import { SalvarBaralhoDialog } from '../dialog/salvar-baralho/salvar-baralho.dialog';
 import { BaralhoProviderService } from 'src/app/provider/baralho-provider.service';
 
 @Component({

@@ -18,12 +18,14 @@ import { FormsModule } from '@angular/forms';
 import { BaralhoPageComponent } from './page/baralho-page/baralho-page.component';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
-import { SalvarBaralhoDialog } from './page/dialog/salvar-baralho.dialog';
+import { SalvarBaralhoDialog } from './page/dialog/salvar-baralho/salvar-baralho.dialog';
 import { ListaBaralhosComponent } from './page/lista-baralhos/lista-baralhos.component';
 import { CardBaralhoComponent } from './component/card-baralho/card-baralho.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MensagensSnackComponent } from './page/snack/mensagens.snack';
+import { ConfirmacaoDialogComponent } from './page/dialog/confirmacao-dialog/confirmacao-dialog.component';
+import { DetalhesBaralhoComponent } from './page/detalhes-baralho/detalhes-baralho.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { MensagensSnackComponent } from './page/snack/mensagens.snack';
     SalvarBaralhoDialog,
     ListaBaralhosComponent,
     CardBaralhoComponent,
-    MensagensSnackComponent
+    MensagensSnackComponent,
+    ConfirmacaoDialogComponent,
+    DetalhesBaralhoComponent
   ],
   imports: [
     FormsModule,
@@ -56,6 +60,7 @@ import { MensagensSnackComponent } from './page/snack/mensagens.snack';
   ],
   entryComponents: [
     SalvarBaralhoDialog,
+    ConfirmacaoDialogComponent,
     MensagensSnackComponent
   ],
   providers: [

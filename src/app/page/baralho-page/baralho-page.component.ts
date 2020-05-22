@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 import { BaralhoProviderService } from 'src/app/provider/baralho-provider.service';
 import { ValdacaoBaralhoUtil } from 'src/app/util/validacao-baralho.util';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {ConfirmacaoDialogComponent } from '../dialog/confirmacao-dialog/confirmacao-dialog.component';
+import { ConfirmacaoDialogModel } from 'src/app/model/confirmacao-dialogo.model';
 
 @Component({
   selector: 'app-baralho-page',
@@ -26,9 +28,8 @@ export class BaralhoPageComponent implements OnInit {
     public dialog: MatDialog,
     private _router: Router,
     private baralhoDao: BaralhoProviderService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
   ) {
-   
   }
 
   ngOnInit() {
@@ -57,11 +58,28 @@ export class BaralhoPageComponent implements OnInit {
     }
   }
 
-  removerCard(card: CardModel) {
+  async removerCard(card: CardModel) {
     if (!isNullOrUndefined(card)) {
-      this.baralho.cards.splice(this.baralho.cards.indexOf(card), 1);
-      this.baralhoDao.dao.atualizar(this.baralho)
+      if (<boolean>await this.confirmacaoDialogo("Confirma remover esta Carta?", "Confirmação")) {
+        this.baralho.cards.splice(this.baralho.cards.indexOf(card), 1);
+        this.baralhoDao.dao.atualizar(this.baralho)
+      }
     }
+  }
+
+  async confirmacaoDialogo(mensagem, titulo): Promise<boolean> {
+    return await new Promise<boolean>(resolve => {
+      const dialogData = new ConfirmacaoDialogModel(titulo, mensagem);
+
+      const dialogRef = this.dialog.open(ConfirmacaoDialogComponent, {
+        maxWidth: "400px",
+        data: dialogData
+      });
+
+      dialogRef.afterClosed().subscribe(dialogResult => {
+        resolve(dialogResult);
+      });
+    });
   }
 
   validacaoInserirCard(card): boolean {
@@ -83,5 +101,4 @@ export class BaralhoPageComponent implements OnInit {
       verticalPosition: 'top',
     });
   }
-
 }
