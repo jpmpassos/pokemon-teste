@@ -25,7 +25,7 @@ Um outro recurso interessante, foi a utilização do Promise que permite transfo
 
 Abaixo segue o código como exemplo: 
 
-``
+```mark
   async removerCard(card: CardModel) {
     if (!isNullOrUndefined(card)) {
       if (<boolean>await this.confirmacaoDialogo("Confirma remover esta Carta?", "Confirmação")) {
@@ -49,7 +49,7 @@ Abaixo segue o código como exemplo:
       });
     });
   }
-``
+```
 
 Por último, implementei a classe QueryParamCardUtil que assemelha a sua utilização ao padrão Builder, com a finalidade construir a parte de QueryParam da requisição rest.
 
